@@ -2,33 +2,20 @@ package dominio;
 
 import java.time.LocalDate;
 
-public class Mentoria {
-  private String titulo;
-  private String descricao;
+public class Mentoria extends Conteudo { // --extends=filha = mentoria filha de conteudo
+
   private LocalDate data;
 
+  @Override
+  public double calcularXP() {
+    return XP_PADRAO + 20d;
+  }
 
-  public Mentoria() {//--CONSTRUTOR VAZIO
+  public Mentoria() {// --CONSTRUTOR VAZIO
 
   }
 
-  
-  //--- GETTERS E SETTERS ------ GETTERS E SETTERS ------ GETTERS E SETTERS ---
-  public String getTitulo() {
-    return titulo;
-  }
-
-  public void setTitulo(String titulo) {
-    this.titulo = titulo;
-  }
-
-  public String getDescricao() {
-    return descricao;
-  }
-
-  public void setDescricao(String descricao) {
-    this.descricao = descricao;
-  }
+  // --- GETTERS E SETTERS ------ GETTERS E SETTERS ------ GETTERS E SETTERS ---
 
   public LocalDate getData() {
     return data;
@@ -38,11 +25,11 @@ public class Mentoria {
     this.data = data;
   }
 
-   //--- GETTERS E SETTERS ------ GETTERS E SETTERS ------ GETTERS E SETTERS ---
+  // --- GETTERS E SETTERS ------ GETTERS E SETTERS ------ GETTERS E SETTERS ---
 
   @Override
   public String toString() {
-    return "Mentoria [titulo=" + titulo + ", descricao=" + descricao + ", data=" + data + "]";
+    return "Mentoria [titulo=" + getTitulo() + ", descricao=" + getDescricao() + ", data=" + data + "]";
   }
 
 }
